@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom font and basic styling */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f7f7f7;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen p-4 sm:p-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <header class="mb-6 pb-4 border-b border-gray-200">
+        <h1 class="text-3xl font-extrabold text-gray-800">User Profile</h1>
+        <p class="text-sm text-gray-500">
+          ID: <span id="user-id-display"></span>
+        </p>
+      </header>
+
+      <!-- Loading Spinner -->
+      <div
+        id="loader"
+        class="flex justify-center items-center h-48"
+        style="display: block"
+      >
+        <svg
+          class="animate-spin -ml-1 mr-3 h-8 w-8 text-indigo-600"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+        <span class="text-lg text-indigo-600">Loading User Data...</span>
+      </div>
+
+      <!-- Error Message -->
+      <div
+        id="error-message"
+        class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-sm"
+        role="alert"
+      >
+        <p class="font-bold">Error Loading Profile</p>
+        <p id="error-text" class="text-sm">
+          Could not fetch user data. Please check the URL.
+        </p>
+      </div>
+
+      <!-- Profile Card -->
+      <div
+        id="profile-card"
+        class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hidden"
+      >
+        <h2 id="full-name" class="text-2xl font-bold mb-4 text-gray-900"></h2>
+
+        <div class="space-y-6">
+          <!-- Contact Section -->
+          <section>
+            <h3
+              class="text-lg font-semibold text-indigo-600 border-b pb-1 mb-3"
+            >
+              Contact Information
+            </h3>
+            <div class="space-y-2 text-gray-700">
+              <p><strong>Username:</strong> <span id="username"></span></p>
+              <p><strong>Email:</strong> <span id="email"></span></p>
+              <p><strong>Phone:</strong> <span id="phone"></span></p>
+              <p><strong>Website:</strong> <span id="website"></span></p>
+            </div>
+          </section>
+
+          <!-- Address Section -->
+          <section>
+            <h3
+              class="text-lg font-semibold text-indigo-600 border-b pb-1 mb-3"
+            >
+              Address
+            </h3>
+            <div class="space-y-2 text-gray-700">
+              <p><span id="street"></span>, <span id="suite"></span></p>
+              <p>
+                <strong>City:</strong> <span id="city"></span> (<span
+                  id="zipcode"
+                ></span
+                >)
+              </p>
+              <p class="text-sm text-gray-500">
+                Geo Location: <span id="geo-lat"></span>,
+                <span id="geo-lng"></span>
+              </p>
+            </div>
+          </section>
+
+          <!-- Company Section -->
+          <section>
+            <h3
+              class="text-lg font-semibold text-indigo-600 border-b pb-1 mb-3"
+            >
+              Company
+            </h3>
+            <div class="space-y-2 text-gray-700">
+              <p><strong>Name:</strong> <span id="company-name"></span></p>
+              <p>
+                <strong>Catchphrase:</strong>
+                <span id="company-catchphrase" class="italic"></span>
+              </p>
+              <p>
+                <strong>Business Service:</strong> <span id="company-bs"></span>
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- The new script file -->
+    <script src="profile.js" defer></script>
+  </body>
+</html>

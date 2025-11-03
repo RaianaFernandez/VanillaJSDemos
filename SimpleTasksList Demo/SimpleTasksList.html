@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Coding Test 2</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      div {
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      li {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .completed-task {
+        text-decoration: line-through;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>My Task List</h2>
+
+    <div>
+      <label for="task-input">New Task:</label>
+      <input type="text" id="task-input" placeholder="e.g., 'Feed the cat'" />
+    </div>
+
+    <button id="add-task-btn">Add Task</button>
+
+    <hr />
+
+    <h2>Tasks</h2>
+    <ul id="task-list"></ul>
+
+    <script src="taskList.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Coding Test</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+      #comment-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+      #comment-list li {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Leave a Comment</h2>
+
+    <div>
+      <label for="username-input">Name:</label>
+      <input type="text" id="username-input" placeholder="Your name..." />
+    </div>
+
+    <div>
+      <label for="comment-input">Comment:</label>
+      <input type="text" id="comment-input" placeholder="Your comment..." />
+    </div>
+
+    <button id="submit-btn">Post Comment</button>
+
+    <hr />
+
+    <h2>Comments</h2>
+    <ul id="comment-list"></ul>
+
+    <script src="comment.js" defer></script>
+  </body>
+</html>

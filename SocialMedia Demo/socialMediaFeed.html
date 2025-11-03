@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Feed</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* A more modern font */
+        max-width: 650px; /* Slightly wider */
+        margin: 20px auto;
+        padding: 0 10px;
+        background-color: #f4f4f9; /* Light background */
+      }
+
+      /* Controls and Filters Styling */
+      h2 {
+        color: #333;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+      }
+      label {
+        margin-right: 10px;
+        font-weight: 500;
+        color: #555;
+      }
+      select {
+        padding: 8px 12px;
+        margin-right: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+      }
+
+      /* Feed Container */
+      #data-container {
+        padding: 20px 0;
+        margin-top: 20px;
+        /* Remove the border from the container, we'll style the individual posts */
+        border: none;
+      }
+
+      /* Post Card Styling (The essential change) */
+      .post {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 25px;
+        padding: 20px;
+      }
+
+      /* User/Header Styling */
+      .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      .post-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        object-fit: cover;
+      }
+      .post-header strong {
+        font-size: 1.1em;
+        color: #1a73e8; /* A nice blue for the username */
+      }
+
+      /* Post Title and Body */
+      .post h3 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.2em;
+      }
+      .post p {
+        color: #666;
+        line-height: 1.5;
+      }
+
+      /* 📸 POLAROID PHOTO FRAME STYLE (Applies to the figure element) 📸 */
+      .post figure {
+        /* Base Polaroid look */
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 10px 10px 40px 10px; /* Thicker bottom border for the signature area */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        margin: 15px auto;
+        max-width: 100%;
+      }
+      .post figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .post figcaption {
+        text-align: center;
+        margin-top: 10px;
+        font-style: italic;
+        color: #777;
+        font-size: 0.9em;
+      }
+
+      /* Placeholder for eventual JS features */
+      .completed-task {
+        text-decoration: line-through;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Social Media Feed Practice 📱</h2>
+
+    <div>
+      <label for="limit-select">Show Posts:</label>
+      <select id="limit-select">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option selected value="20">20</option>
+      </select>
+      <label for="user-select">Filter User:</label>
+      <select id="user-select">
+        <option value="0">All Users</option>
+      </select>
+    </div>
+
+    <div id="data-container">
+      <img src="Loading_icon.gif" id="loading-icon" style="display: none" />
+      <p id="initial-message">Please select an option to load the feed.</p>
+    </div>
+
+    <script src="feedData.js" defer></script>
+  </body>
+</html>

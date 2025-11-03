@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API Test</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 20px auto;
+      }
+      #data-container {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+      }
+      .completed-task {
+        text-decoration: line-through;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Fetch Practice</h2>
+    <label for="limit-select">Select how many Tasks do you want to see:</label>
+    <select id="limit-select">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option selected value="20">20</option>
+    </select>
+    <label for="users">Filter User:</label>
+    <select id="users">
+      <option value="0">All Users</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <div id="data-container">
+      <img src="Loading_icon.gif" id="loading-icon" style="display: none" />
+    </div>
+
+    <script src="fetch.js" defer></script>
+  </body>
+</html>
